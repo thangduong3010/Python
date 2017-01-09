@@ -1,4 +1,4 @@
-def array_packing(a):
+def arrayPackingOld(a):
 	conv_to_binary = ""
 	this_is_binary = ""
 	quotient = 1
@@ -28,5 +28,13 @@ def array_packing(a):
 
 	print("The number is: {}".format(conv_to_decimal))
 
+def arrayPacking(a):
+	result = 0
+
+	for i in range(0, len(a)):
+		result += a[i] << 8 * i
+
+	return result
+
 if __name__ == "__main__":
-	array_packing([23, 45, 39])
+	print(arrayPacking([24,85,0]))
